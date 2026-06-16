@@ -1,0 +1,1187 @@
+﻿<!DOCTYPE html>
+<html lang="zh-TW" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chiao-Jung Lin | Global Trade & AI Logistics Strategist</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            blue: '#2563eb',
+                            purple: '#7c3aed',
+                            mint: '#10b981',
+                            dark: '#0f172a',
+                            light: '#f8fafc'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-1hL9cXr1qhp0FhA6okZ+uKKpGlTlAsF4vX6tP2F+7ao+F30vWv9h/n9DForj+8G5EvqUAG7L4d7feyjaRdRjNQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff;
+            color: #0f172a;
+            overflow-x: hidden;
+        }
+
+        /* Ambient glowing circles */
+        .glow-sphere {
+            filter: blur(140px);
+            opacity: 0.45;
+            mix-blend-mode: multiply;
+            pointer-events: none;
+        }
+
+        /* Glassmorphism utility */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.65);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+        }
+
+        .dark-glass {
+            background: rgba(15, 23, 42, 0.05);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        /* Grid Background pattern */
+        .grid-bg {
+            background-size: 40px 40px;
+            background-image: 
+                linear-gradient(to right, rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+        }
+
+        /* Border gradients */
+        .gradient-border {
+            position: relative;
+        }
+        .gradient-border::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            padding: 1px;
+            background: linear-gradient(to bottom right, rgba(37,99,235,0.25), rgba(124,58,237,0.25));
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
+        }
+
+        /* Typewriter blinking cursor */
+        .type-cursor::after {
+            content: '|';
+            animation: blink 1s step-end infinite;
+        }
+
+        @keyframes blink {
+            from, to { color: transparent }
+            50% { color: #2563eb }
+        }
+
+        /* Scroll reveal standard states */
+        .reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: all 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Hover glows */
+        .hover-glow {
+            transition: all 0.4s ease;
+        }
+        .hover-glow:hover {
+            box-shadow: 0 20px 40px -15px rgba(37, 99, 235, 0.12);
+            transform: translateY(-4px);
+        }
+    </style>
+</head>
+<body class="grid-bg select-none antialiased">
+
+    <div class="fixed top-0 left-1/4 w-[500px] h-[500px] rounded-full bg-blue-200 glow-sphere -translate-y-12"></div>
+    <div class="fixed top-1/3 right-1/4 w-[600px] h-[600px] rounded-full bg-purple-200 glow-sphere"></div>
+    <div class="fixed bottom-10 left-10 w-[450px] h-[450px] rounded-full bg-emerald-100 glow-sphere"></div>
+
+    <nav class="fixed top-4 left-1/2 -translate-x-1/2 w-[92%] max-w-7xl z-50 glass-panel rounded-full px-6 py-3 shadow-sm flex items-center justify-between transition-all duration-300">
+        <div class="flex items-center gap-3">
+            <span class="w-8 h-8 rounded-lg bg-gradient-to-tr from-brand-blue to-brand-purple flex items-center justify-center text-white font-extrabold text-sm tracking-tighter">W</span>
+            <div>
+                <span class="font-bold text-slate-800 tracking-tight text-base">WHALE AI</span>
+                <span class="text-[9px] block text-brand-purple font-semibold tracking-widest uppercase -mt-1">GLOBAL TRADE</span>
+            </div>
+        </div>
+
+        <!-- Desktop Navigation Items -->
+        <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
+            <a href="#about" class="hover:text-brand-blue transition-colors">關於林巧容</a>
+            <a href="#expertise" class="hover:text-brand-blue transition-colors">AI 解決方案</a>
+            <a href="#case" class="hover:text-brand-blue transition-colors">半導體專案</a>
+            <a href="#blog" class="hover:text-brand-blue transition-colors">國際貿易觀點</a>
+            <a href="#workflow" class="hover:text-brand-blue transition-colors">合作流程</a>
+            <a href="#faq" class="hover:text-brand-blue transition-colors">FAQ</a>
+        </div>
+
+        <div class="flex items-center gap-4">
+            <!-- Connection Status -->
+            <div class="hidden sm:flex items-center gap-2 bg-slate-50 border border-slate-100 px-3 py-1 rounded-full text-xs text-slate-500 font-medium">
+                <span class="relative flex h-2 w-2">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-mint opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-brand-mint"></span>
+                </span>
+                Ready to Connect
+            </div>
+            <!-- Booking CTA -->
+            <a href="https://calendar.app.google/BSV5fuN31qyr7vTw9" target="_blank" class="bg-slate-900 hover:bg-brand-blue text-white px-5 py-2 rounded-full text-xs font-semibold tracking-wide shadow-md hover:shadow-lg transition-all duration-300">
+                預約諮詢
+            </a>
+            <!-- Mobile Menu Toggle -->
+            <button id="menu-btn" class="md:hidden flex flex-col justify-between h-4 w-5 text-slate-800 focus:outline-none">
+                <span class="h-0.5 w-full bg-slate-800 rounded transition-transform duration-300 origin-top"></span>
+                <span class="h-0.5 w-full bg-slate-800 rounded transition-opacity duration-300"></span>
+                <span class="h-0.5 w-full bg-slate-800 rounded transition-transform duration-300 origin-bottom"></span>
+            </</button>
+        </div>
+    </nav>
+
+    <div id="mobile-menu" class="fixed inset-0 z-40 bg-white/95 backdrop-blur-md hidden flex-col justify-center items-center gap-8 text-xl font-semibold text-slate-800">
+        <a href="#about" class="menu-link hover:text-brand-blue">關於林巧容</a>
+        <a href="#expertise" class="menu-link hover:text-brand-blue">AI 解決方案</a>
+        <a href="#case" class="menu-link hover:text-brand-blue">半導體專案</a>
+        <a href="#blog" class="menu-link hover:text-brand-blue">國際貿易觀點</a>
+        <a href="#workflow" class="menu-link hover:text-brand-blue">合作流程</a>
+        <a href="#faq" class="menu-link hover:text-brand-blue">FAQ</a>
+        <a href="https://calendar.app.google/BSV5fuN31qyr7vTw9" target="_blank" class="bg-brand-blue text-white px-8 py-3 rounded-full text-sm">立即預約諮詢</a>
+    </div>
+
+    <section class="relative min-h-screen pt-32 pb-16 flex flex-col justify-between items-center px-4 overflow-hidden">
+        <div class="w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center flex-grow">
+            <!-- Hero Typography -->
+            <div class="lg:col-span-6 z-10 text-center lg:text-left">
+                <!-- Premium Pill -->
+                <div class="inline-flex items-center gap-2 bg-slate-50 border border-slate-100 text-xs px-3 py-1.5 rounded-full text-slate-600 mb-6 font-semibold shadow-sm">
+                    <span class="px-1.5 py-0.5 text-[10px] bg-brand-blue text-white rounded font-bold">NEW</span>
+                    <span>AI 運籌學與國際地緣風險決策框架</span>
+                </div>
+
+                <!-- Main Typographic Title -->
+                <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-slate-900 leading-[1.1] mb-6">
+                    Making Global Trade<br>
+                    <span id="typewriter" class="text-transparent bg-clip-text bg-gradient-to-r from-brand-blue via-brand-purple to-pink-500 type-cursor"></span>
+                </h1>
+
+                <!-- Subtitle -->
+                <p class="text-lg md:text-xl text-slate-600 font-normal leading-relaxed mb-8 max-w-xl mx-auto lg:mx-0">
+                    讓全球貿易更智慧、更安全、更具韌性。<br>
+                    <span class="text-slate-400 text-sm">結合大鯨魚國際貿易實戰，為半導體、高精密產業定制 AI 物流風控決策。</span>
+                </p>
+
+                <!-- Dual CTA Buttons -->
+                <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                    <a href="https://calendar.app.google/BSV5fuN31qyr7vTw9" target="_blank" class="w-full sm:w-auto bg-slate-900 hover:bg-brand-blue text-white px-8 py-4 rounded-xl font-semibold tracking-wide shadow-lg hover:shadow-2xl transition-all duration-300 text-center">
+                        立即預約諮詢
+                    </a>
+                    <a href="#expertise" class="w-full sm:w-auto bg-white hover:bg-slate-50 border border-slate-200 text-slate-700 px-8 py-4 rounded-xl font-semibold tracking-wide shadow-sm hover:shadow transition-all duration-300 text-center">
+                        了解服務範疇
+                    </a>
+                </div>
+            </div>
+
+            <div class="lg:col-span-6 relative flex justify-center items-center w-full h-[350px] md:h-[450px]">
+                <!-- Interactive Canvas behind Glass Controls -->
+                <canvas id="routeCanvas" class="absolute inset-0 w-full h-full rounded-2xl z-0"></canvas>
+                
+                <!-- Overlay glass information cards (Stripe-like dashboard preview) -->
+                <div class="absolute bottom-4 left-4 right-4 glass-panel p-4 rounded-2xl shadow-xl border border-white/50 z-10 flex justify-between items-center text-xs">
+                    <div class="flex items-center gap-3">
+                        <div class="p-2 bg-blue-50 text-brand-blue rounded-lg">
+                            <svg class="w-5 h-5 animate-spin" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v4m0 8v4m4-8h4m-8 0H4m15.364-6.364l-2.828 2.828m-8.486 8.486L5.364 17.364m0-10.728l2.828 2.828m8.486 8.486l2.828-2.828"></path></svg>
+                        </div>
+                        <div>
+                            <p class="text-[10px] text-slate-400 font-medium uppercase">Active Path Optimizer</p>
+                            <p class="font-bold text-slate-700">亞太 ⇆ 美東避險通道</p>
+                        </div>
+                    </div>
+                    <div class="text-right">
+                        <p class="text-[10px] text-slate-400 font-medium uppercase">AI Risk Index</p>
+                        <p class="font-bold text-brand-mint">0.12 (極安全)</p>
+                    </div>
+                </div>
+
+                <!-- Mini Floating badges to simulate enterprise cockpit -->
+                <div class="absolute top-4 left-4 glass-panel px-3 py-1.5 rounded-full text-[11px] font-semibold text-slate-600 shadow-sm border border-white/40 flex items-center gap-1.5">
+                    <span class="w-2 h-2 rounded-full bg-brand-blue animate-pulse"></span>
+                    TSMC Logistics Hub Active
+                </div>
+
+                <div class="absolute top-16 right-4 glass-panel px-3 py-1.5 rounded-full text-[11px] font-semibold text-slate-600 shadow-sm border border-white/40 flex items-center gap-1.5">
+                    <span class="w-2 h-2 rounded-full bg-brand-purple animate-pulse"></span>
+                    Middle East Redirection Mode
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll down indicator -->
+        <div class="text-center pt-8 z-10">
+            <a href="#about" class="inline-flex flex-col items-center gap-2 text-slate-400 hover:text-slate-800 text-xs font-semibold uppercase tracking-widest transition-colors duration-300">
+                Scroll Down
+                <svg class="w-4 h-4 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+            </a>
+        </div>
+    </section>
+
+    <section id="about" class="reveal py-24 px-4 max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+            
+            <!-- Profile Info (Left col) -->
+            <div class="lg:col-span-5 space-y-8 lg:sticky lg:top-24">
+                <div class="space-y-4">
+                    <span class="text-xs font-bold uppercase tracking-wider text-brand-blue">EXECUTIVE PROFILE</span>
+                    <h2 class="text-4xl font-extrabold text-slate-900 tracking-tight">林巧容 <span class="text-lg font-medium text-slate-400 ml-2">Chiao-Jung Lin</span></h2>
+                    <p class="text-base text-brand-purple font-semibold">大鯨魚國際貿易有限公司 · 高級專員 & 國際物流 AI 轉型顧問</p>
+                </div>
+
+                <p class="text-slate-600 leading-relaxed text-sm md:text-base">
+                    林巧容（Ciaoro Lin）擁有多年的大宗物資、高科技半導體供應鏈管理及國際法規實戰經驗。專精於運用數據模型與機器學習演算優化跨國物流路徑，並能在高度多變的地緣政治風險中，為大型企業提供最具韌性的運輸解決方案。
+                </p>
+
+                <!-- Premium Stats Grid -->
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="p-4 rounded-xl bg-slate-50 border border-slate-100">
+                        <p class="text-2xl font-bold text-slate-900">100%</p>
+                        <p class="text-xs text-slate-500">千萬級高精密設備運輸完好率</p>
+                    </div>
+                    <div class="p-4 rounded-xl bg-slate-50 border border-slate-100">
+                        <p class="text-2xl font-bold text-slate-900">-22%</p>
+                        <p class="text-xs text-slate-500">平均國際綜合物流成本優化</p>
+                    </div>
+                </div>
+
+                <!-- Education & Certifications -->
+                <div class="space-y-4 pt-4 border-t border-slate-100">
+                    <h4 class="text-xs font-bold text-slate-400 uppercase tracking-widest">Education & Credentials</h4>
+                    <div class="space-y-2 text-xs">
+                        <div class="flex justify-between">
+                            <span class="font-medium text-slate-700">國立頂尖大學 國際企業與智慧供應鏈研究所</span>
+                            <span class="text-slate-400">Master Degree</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="font-medium text-slate-700">國際物流管理師甲級證照 (CILT Level 3)</span>
+                            <span class="text-slate-400">Certified Professional</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="font-medium text-slate-700">AI 數據決策科學與進階供應鏈模擬專利</span>
+                            <span class="text-slate-400">Co-Inventor</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lg:col-span-7 space-y-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Mission -->
+                    <div class="glass-panel p-6 rounded-2xl border border-slate-100 hover-glow">
+                        <div class="w-10 h-10 rounded-xl bg-blue-50 text-brand-blue flex items-center justify-center mb-4">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">我的使命 Mission</h3>
+                        <p class="text-xs text-slate-500 leading-relaxed">打破傳統物流的資訊黑盒子，運用智慧 AI 精準化决策，協助企業在全球地緣政治風暴中逆勢保全資產、鞏固供應鏈護城河。</p>
+                    </div>
+
+                    <!-- Vision -->
+                    <div class="glass-panel p-6 rounded-2xl border border-slate-100 hover-glow">
+                        <div class="w-10 h-10 rounded-xl bg-purple-50 text-brand-purple flex items-center justify-center mb-4">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">未來願景 Vision</h3>
+                        <p class="text-xs text-slate-500 leading-relaxed">建立亞洲至全球最具智慧的自主性跨國物流調度網絡，透過 AI 預判模型大幅縮減海空聯運碳排與地緣運輸耗費。</p>
+                    </div>
+
+                    <!-- Philosophy -->
+                    <div class="glass-panel p-6 rounded-2xl border border-slate-100 hover-glow">
+                        <div class="w-10 h-10 rounded-xl bg-emerald-50 text-brand-mint flex items-center justify-center mb-4">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">專業哲學 Philosophy</h3>
+                        <p class="text-xs text-slate-500 leading-relaxed">「在最動盪的局勢下，最理智的決策不是賭博，而是依託精密的數據防護。」以嚴謹的安全與控管標準應對每次委託。</p>
+                    </div>
+
+                    <!-- AI Mindset -->
+                    <div class="glass-panel p-6 rounded-2xl border border-slate-100 hover-glow">
+                        <div class="w-10 h-10 rounded-xl bg-orange-50 text-orange-500 flex items-center justify-center mb-4">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">AI 數位思維 Mindset</h3>
+                        <p class="text-xs text-slate-500 leading-relaxed">物流不只是卡車與貨輪，它是本質上的資訊與時間差。AI 是我們在茫茫多變國際情勢中提前透視危機的「雷達」。</p>
+                    </div>
+                </div>
+
+                <div id="case" class="gradient-border glass-panel p-8 rounded-3xl space-y-6 shadow-xl relative overflow-hidden">
+                    <!-- Decorative back layer -->
+                    <div class="absolute -right-12 -bottom-12 w-48 h-48 bg-blue-100 rounded-full blur-2xl opacity-50"></div>
+                    
+                    <div class="flex items-center gap-2">
+                        <span class="px-2.5 py-1 text-[10px] bg-slate-900 text-white font-bold rounded-full">HERO CASE STUDY</span>
+                        <span class="text-xs text-brand-purple font-semibold">台積電千万級運輸專案</span>
+                    </div>
+
+                    <h3 class="text-2xl md:text-3xl font-extrabold text-slate-900 leading-tight">
+                        台積電千萬級半導體精密設備<br>國際多模聯運與 AI 防護專案
+                    </h3>
+
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        在國際先進晶圓代工大廠關鍵擴廠節點，受委託主導高精密度 ASML 微影曝光 sub-module 與先進探針卡台架之國際防護空海聯運。
+                    </p>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
+                        <div class="space-y-1 p-3 bg-slate-50 rounded-xl">
+                            <p class="text-slate-400">運輸要求與挑戰</p>
+                            <p class="font-semibold text-slate-800">震動極限 &lt; 0.3G<br>全程濕度 &lt; 30% RH</p>
+                        </div>
+                        <div class="space-y-1 p-3 bg-slate-50 rounded-xl">
+                            <p class="text-slate-400">AI 部署決策</p>
+                            <p class="font-semibold text-slate-800">氣壓減震感測聯動<br>即時動態清關模型</p>
+                        </div>
+                        <div class="space-y-1 p-3 bg-slate-50 rounded-xl">
+                            <p class="text-slate-400">專案終極成果</p>
+                            <p class="font-semibold text-brand-mint">0% 耗損、提前 5 天<br>成功入庫無塵室</p>
+                        </div>
+                    </div>
+
+                    <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+                        <span class="text-xs text-slate-400">技術工具：IoT 慣性感測、AI Route Simulator、Customs Engine v2</span>
+                        <a href="https://calendar.app.google/BSV5fuN31qyr7vTw9" target="_blank" class="text-xs font-bold text-brand-blue hover:underline inline-flex items-center gap-1">
+                            了解方案架構
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="expertise" class="reveal py-24 bg-slate-50 border-y border-slate-100 px-4">
+        <div class="max-w-7xl mx-auto space-y-16">
+            <div class="text-center max-w-2xl mx-auto space-y-4">
+                <span class="text-xs font-bold uppercase tracking-wider text-brand-purple">CORE AI SOLUTIONS</span>
+                <h2 class="text-4xl font-extrabold text-slate-900 tracking-tight">美伊戰爭及紅海局勢下<br>國際貿易運輸方案</h2>
+                <p class="text-slate-600 text-sm">
+                    地緣衝突使得傳統海運保費飆升、交期無限延宕。我們提供獨家的「AI 智能情境推演」與「多模動態聯運」方案，確保供應鏈永不停擺。
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Card 1: Risk Modeling -->
+                <div class="glass-panel p-8 rounded-2xl border border-slate-200/50 hover-glow flex flex-col justify-between h-[360px]">
+                    <div class="space-y-4">
+                        <div class="w-12 h-12 rounded-2xl bg-red-50 text-red-500 flex items-center justify-center">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900">1. 全球地緣風險即時分析</h3>
+                        <p class="text-xs text-slate-500 leading-relaxed">
+                            即時串接中東、蘇伊士運河與歐亞衝突港口之動態戰事、保險係數。利用 NLP 與卷積網絡預判特定區域潛在封鎖機率，提供即時動態警報。
+                        </p>
+                    </div>
+                    <div class="text-[11px] font-semibold text-brand-blue">
+                        預期成果: 全球預警反應時間縮短至 4 分鐘內
+                    </div>
+                </div>
+
+                <!-- Card 2: Multimodal Routing -->
+                <div class="glass-panel p-8 rounded-2xl border border-slate-200/50 hover-glow flex flex-col justify-between h-[360px]">
+                    <div class="space-y-4">
+                        <div class="w-12 h-12 rounded-2xl bg-blue-50 text-brand-blue flex items-center justify-center">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900">2. 海空鐵多模複合避險航線</h3>
+                        <p class="text-xs text-slate-500 leading-relaxed">
+                            跳脫單一海運瓶頸。AI 演算法自動規劃「海運至中東中轉港 ⇆ 空運至歐美 ⇆ 洲際快鐵」的無縫銜接模式，智慧切換高機動性物流路徑。
+                        </p>
+                    </div>
+                    <div class="text-[11px] font-semibold text-brand-blue">
+                        預期成果: 成功繞開紅海，交期延宕率降為零
+                    </div>
+                </div>
+
+                <!-- Card 3: AI Pricing & Booking -->
+                <div class="glass-panel p-8 rounded-2xl border border-slate-200/50 hover-glow flex flex-col justify-between h-[360px]">
+                    <div class="space-y-4">
+                        <div class="w-12 h-12 rounded-2xl bg-emerald-50 text-brand-mint flex items-center justify-center">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900">3. 運價精準預測與艙位鎖定</h3>
+                        <p class="text-xs text-slate-500 leading-relaxed">
+                            利用神經網絡預測運價走勢，在爆艙及海運巨幅波動前，協助企業提前 15-30 天精準鎖定策略合作船東艙位，節省高額溢價與空等。
+                        </p>
+                    </div>
+                    <div class="text-[11px] font-semibold text-brand-blue">
+                        預期成果: 平均節省 18% - 25% 突發性運費損失
+                    </div>
+                </div>
+
+                <!-- Card 4: Customized Marine Insurance -->
+                <div class="glass-panel p-8 rounded-2xl border border-slate-200/50 hover-glow flex flex-col justify-between h-[360px]">
+                    <div class="space-y-4">
+                        <div class="w-12 h-12 rounded-2xl bg-purple-50 text-brand-purple flex items-center justify-center">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900">4. 戰爭保險最優配對模型</h3>
+                        <p class="text-xs text-slate-500 leading-relaxed">
+                            針對動盪航線的兵險、附加險、滯港險。AI 模型精準媒合倫敦勞合社等多家承保機構最新風險指標，精細化配置最具 CP 值的防禦性保額。
+                        </p>
+                    </div>
+                    <div class="text-[11px] font-semibold text-brand-blue">
+                        預期成果: 保費結構最佳化，防護效力全面升級
+                    </div>
+                </div>
+
+                <!-- Card 5: Elastic Supply Chain Resilience -->
+                <div class="glass-panel p-8 rounded-2xl border border-slate-200/50 hover-glow flex flex-col justify-between h-[360px]">
+                    <div class="space-y-4">
+                        <div class="w-12 h-12 rounded-2xl bg-orange-50 text-orange-500 flex items-center justify-center">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 1121.21 8H17"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900">5. 供應鏈極端壓力測試</h3>
+                        <p class="text-xs text-slate-500 leading-relaxed">
+                            每週自動模擬美伊局勢惡化、封港、甚至霍爾木茲海峽管制等極端情境。提供對應的緊急預案及跨國倉儲佈局，將被動等待轉換為主動掌控。
+                        </p>
+                    </div>
+                    <div class="text-[11px] font-semibold text-brand-blue">
+                        預期成果: 供應鏈彈性係數提升 1.8 倍
+                    </div>
+                </div>
+
+                <!-- Card 6: AI Dynamic Clearance -->
+                <div class="glass-panel p-8 rounded-2xl border border-slate-200/50 hover-glow flex flex-col justify-between h-[360px]">
+                    <div class="space-y-4">
+                        <div class="w-12 h-12 rounded-2xl bg-indigo-50 text-indigo-500 flex items-center justify-center">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900">6. AI 快速清關與合規模擬</h3>
+                        <p class="text-xs text-slate-500 leading-relaxed">
+                            結合進出口 HS Code 智能辨識與世界各國海關隨時變動之防務檢驗標準，模擬最不易卡關的關稅文件結構，降低貨品在危機港口滯留風險。
+                        </p>
+                    </div>
+                    <div class="text-[11px] font-semibold text-brand-blue">
+                        預期成果: 卡關重檢率從 14.2% 下降至 0.1%
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="reveal py-24 px-4 max-w-7xl mx-auto space-y-16">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+            <div class="space-y-4">
+                <span class="text-xs font-bold uppercase tracking-wider text-brand-blue">CASE PORTFOLIO</span>
+                <h2 class="text-4xl font-extrabold text-slate-900 tracking-tight">精選國際顧問案</h2>
+            </div>
+            <p class="text-slate-500 text-sm max-w-md">
+                依據大鯨魚國際實戰，我們為高科技製造、精密化學品及冷鏈醫藥設計專屬 AI 運輸防禦架構。
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Case 1 -->
+            <div class="glass-panel rounded-2xl overflow-hidden hover-glow border border-slate-100 flex flex-col justify-between">
+                <div>
+                    <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=1200&q=80" alt="Bio-pharma Cold Chain" class="w-full h-56 object-cover" onerror="this.src='https://placehold.co/600x300/e2e8f0/1e293b?text=Cold+Chain+Logistics'">
+                    <div class="p-8 space-y-4">
+                        <span class="text-xs text-brand-purple font-bold uppercase">生物醫療與冷鏈 AI 自動調度案</span>
+                        <h3 class="text-2xl font-bold text-slate-900">跨境超低溫核酸製劑全時智能監控</h3>
+                        <p class="text-xs text-slate-500 leading-relaxed">
+                            針對極端敏感的生物樣本進行跨大西洋冷鏈物流。透過配置物聯網環境感測儀，將溫控異常與海空連動延誤之預測準確度提升至 97.4%，全面降低變質風險。
+                        </p>
+                    </div>
+                </div>
+                <div class="px-8 pb-8 flex flex-wrap gap-2 text-[10px] font-semibold">
+                    <span class="bg-slate-100 text-slate-600 px-2 py-1 rounded">IoT Sensors</span>
+                    <span class="bg-slate-100 text-slate-600 px-2 py-1 rounded">Predictive Temp Engine</span>
+                    <span class="bg-slate-100 text-slate-600 px-2 py-1 rounded">Pharma Compliance</span>
+                </div>
+            </div>
+
+            <!-- Case 2 -->
+            <div class="glass-panel rounded-2xl overflow-hidden hover-glow border border-slate-100 flex flex-col justify-between">
+                <div>
+                    <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&q=80" alt="AI Customs Clearance" class="w-full h-56 object-cover" onerror="this.src='https://placehold.co/600x300/e2e8f0/1e293b?text=AI+Customs+Clearance'">
+                    <div class="p-8 space-y-4">
+                        <span class="text-xs text-brand-blue font-bold uppercase">智慧關稅最佳化與動態通關</span>
+                        <h3 class="text-2xl font-bold text-slate-900">亞太跨國電商百萬級包裹關稅動態申報</h3>
+                        <p class="text-xs text-slate-500 leading-relaxed">
+                            因應美中歐等多邊複雜關稅政策隨時調整。建立 AI HS Code 自動分類與變動關稅試算防線，避免被徵收高額懲罰性關稅，達成極速免稅通關。
+                        </p>
+                    </div>
+                </div>
+                <div class="px-8 pb-8 flex flex-wrap gap-2 text-[10px] font-semibold">
+                    <span class="bg-slate-100 text-slate-600 px-2 py-1 rounded">HS Code Classifier</span>
+                    <span class="bg-slate-100 text-slate-600 px-2 py-1 rounded">Dynamic Duty Tracker</span>
+                    <span class="bg-slate-100 text-slate-600 px-2 py-1 rounded">API Integration</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="blog" class="reveal py-24 bg-slate-50 border-y border-slate-100 px-4">
+        <div class="max-w-7xl mx-auto space-y-16">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+                <div class="space-y-4">
+                    <span class="text-xs font-bold uppercase tracking-wider text-brand-purple">INSIGHTS & PUBLICATIONS</span>
+                    <h2 class="text-4xl font-extrabold text-slate-900 tracking-tight">國際貿易與物流 AI 觀點網誌</h2>
+                </div>
+                <a href="https://calendar.app.google/BSV5fuN31qyr7vTw9" target="_blank" class="text-xs font-bold text-brand-blue hover:underline inline-flex items-center gap-1">
+                    訂閱每週供應鏈白皮書
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                </a>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Blog 1 -->
+                <div class="glass-panel rounded-2xl overflow-hidden hover-glow border border-slate-200/50 p-6 space-y-6 flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <span class="text-[10px] font-extrabold text-brand-blue uppercase tracking-widest">AI & SUPPLY CHAIN</span>
+                        <h4 class="text-xl font-bold text-slate-900 leading-snug">
+                            AI 技術如何徹底颠覆傳統跨國海運路由選擇？
+                        </h4>
+                        <p class="text-xs text-slate-500 leading-relaxed">
+                            從靜態的固定航線排程，轉變為隨氣候、港口擁堵度、地緣局勢隨時微調的「彈性活體路由」。這將使船東與貨主的綜合損失降低多達 35%。
+                        </p>
+                    </div>
+                    <div class="flex items-center justify-between text-[11px] text-slate-400 font-medium pt-4 border-t border-slate-100">
+                        <span>Read Time: 5 mins</span>
+                        <span class="text-brand-purple">林巧容 著 · 2026/06</span>
+                    </div>
+                </div>
+
+                <!-- Blog 2 -->
+                <div class="glass-panel rounded-2xl overflow-hidden hover-glow border border-slate-200/50 p-6 space-y-6 flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <span class="text-[10px] font-extrabold text-brand-purple uppercase tracking-widest">GEOPOLITICAL STRATEGY</span>
+                        <h4 class="text-xl font-bold text-slate-900 leading-snug">
+                            剖析美伊衝突背後，全球供應鏈戰略「去中心化」新戰術
+                        </h4>
+                        <p class="text-xs text-slate-500 leading-relaxed">
+                            過往的 Nearshoring 已不足以應付極端區域軍事封閉。本文深入探討如何在大鯨魚的國際框架下，進行彈性「虛擬庫存與中轉港分佈」佈局。
+                        </p>
+                    </div>
+                    <div class="flex items-center justify-between text-[11px] text-slate-400 font-medium pt-4 border-t border-slate-100">
+                        <span>Read Time: 8 mins</span>
+                        <span class="text-brand-purple">林巧容 著 · 2026/05</span>
+                    </div>
+                </div>
+
+                <!-- Blog 3 -->
+                <div class="glass-panel rounded-2xl overflow-hidden hover-glow border border-slate-200/50 p-6 space-y-6 flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <span class="text-[10px] font-extrabold text-brand-mint uppercase tracking-widest">ESG & SUSTAINABILITY</span>
+                        <h4 class="text-xl font-bold text-slate-900 leading-snug">
+                            Supply Chain 4.0 框架下，歐盟碳關稅 (CBAM) 的 AI 合規策略
+                        </h4>
+                        <p class="text-xs text-slate-500 leading-relaxed">
+                            如何精確估算每一只貨櫃海空聯運中產生的碳足跡？這篇文章揭秘我們如何使用動態機器學習，為台廠提前打造無痛綠色貿易。
+                        </p>
+                    </div>
+                    <div class="flex items-center justify-between text-[11px] text-slate-400 font-medium pt-4 border-t border-slate-100">
+                        <span>Read Time: 6 mins</span>
+                        <span class="text-brand-purple">林巧容 著 · 2026/05</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="reveal py-24 px-4 max-w-4xl mx-auto space-y-16">
+        <div class="text-center space-y-4">
+            <span class="text-xs font-bold uppercase tracking-wider text-brand-blue">PROFESSIONAL JOURNEY</span>
+            <h2 class="text-4xl font-extrabold text-slate-900 tracking-tight">林巧容的職涯進程與實戰歷程</h2>
+            <p class="text-slate-500 text-sm">從奠定深厚傳統貿易與跨國物流法規根基，到大鯨魚國際貿易全面推動 AI 智慧運籌決策。</p>
+        </div>
+
+        <div class="relative border-l-2 border-slate-150 pl-6 space-y-12 ml-4">
+            <!-- Timeline Item 1 -->
+            <div class="relative">
+                <span class="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full border-4 border-white bg-brand-blue shadow-sm"></span>
+                <div class="space-y-2">
+                    <span class="text-[10px] font-bold text-slate-400 tracking-wider">2024 - PRESENT</span>
+                    <h4 class="text-lg font-bold text-slate-900">大鯨魚國際貿易有限公司 · 高級專員 & AI 轉型特派代表</h4>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        主導多項半導體高價值精密設備與敏感化工原料的特殊避險航線設計。負責導入並測試 AI Logistics Simulator 模型，成功為多位大型跨國製造業客戶度過红海危機與蘇伊士運河爆艙風波。
+                    </p>
+                </div>
+            </div>
+
+            <!-- Timeline Item 2 -->
+            <div class="relative">
+                <span class="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full border-4 border-white bg-brand-purple shadow-sm"></span>
+                <div class="space-y-2">
+                    <span class="text-[10px] font-bold text-slate-400 tracking-wider">2021 - 2023</span>
+                    <h4 class="text-lg font-bold text-slate-900">大型一級國際貨運代理機構 (Tier-1 Forwarder) · 全球物流調度主管</h4>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        直接面對亞太至北美、西歐一線船東與航空公司。負責千萬噸級特殊冷鏈、高額資產清關手續，精通各國關稅實務法規與多式聯運、滯港談判技巧。
+                    </p>
+                </div>
+            </div>
+
+            <!-- Timeline Item 3 -->
+            <div class="relative">
+                <span class="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full border-4 border-white bg-brand-mint shadow-sm"></span>
+                <div class="space-y-2">
+                    <span class="text-[10px] font-bold text-slate-400 tracking-wider">2018 - 2020</span>
+                    <h4 class="text-lg font-bold text-slate-900">高精密材料進出口貿易商 · 關規合規與採購戰略專家</h4>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        深入第一線碼頭、海關查驗現場與保稅倉庫。專精於多邊產地證、進口許可證申辦流程，有效解決各類突發卡關查扣事件，建立堅實的合規運營護城河。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="reveal py-24 bg-slate-50 border-y border-slate-100 px-4">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div class="lg:col-span-5 space-y-6">
+                <span class="text-xs font-bold uppercase tracking-wider text-brand-purple">THE COMPETITIVE EDGE</span>
+                <h2 class="text-4xl font-extrabold text-slate-900 tracking-tight">為什麼選擇林巧容？</h2>
+                <p class="text-sm text-slate-600 leading-relaxed">
+                    市面上有多家傳統的物流承攬商，亦有許多的資料科學團隊。但我具備罕見的「實務運維＋數據模型」雙軌大腦，能完美將真實代碼與一線清關完全結合。
+                </p>
+                
+                <div class="space-y-4 pt-4">
+                    <div class="flex gap-3 items-start">
+                        <div class="w-5 h-5 rounded bg-emerald-100 text-brand-mint flex items-center justify-center flex-shrink-0 mt-1">✓</div>
+                        <div>
+                            <p class="text-sm font-bold text-slate-800">100% 懂真實碼頭與一線清關</p>
+                            <p class="text-xs text-slate-500">不談不切實際的純代碼，我知道當極端海關扣件時如何快速通融合規放行。</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-3 items-start">
+                        <div class="w-5 h-5 rounded bg-emerald-100 text-brand-mint flex items-center justify-center flex-shrink-0 mt-1">✓</div>
+                        <div>
+                            <p class="text-sm font-bold text-slate-800">先進的 AI 地緣衝突應急預案庫</p>
+                            <p class="text-xs text-slate-500">內建超過 40 種海空鐵聯運繞道模型，能夠隨時應對中東、紅海、台海極端狀況。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lg:col-span-7 bg-white p-8 rounded-3xl shadow-xl border border-slate-150 grid grid-cols-1 md:grid-cols-2 gap-8 relative overflow-hidden">
+                <div class="absolute -top-12 -right-12 w-48 h-48 bg-purple-100 rounded-full blur-2xl opacity-40"></div>
+                
+                <div class="space-y-2">
+                    <p class="text-slate-400 font-bold text-xs uppercase">TRADITIONAL VS WHALE AI</p>
+                    <h4 class="text-lg font-bold text-slate-800">傳統承攬代理商 (Forwarder)</h4>
+                    <p class="text-xs text-slate-500 leading-relaxed">
+                        ✕ 出事時被動通報、不具避險推演能力<br>
+                        ✕ 依賴人工比對各方航路，運費易遭不當灌水<br>
+                        ✕ 文件人工比對，繁雜卡關耗時數天
+                    </p>
+                </div>
+
+                <div class="space-y-2 border-t md:border-t-0 md:border-l border-slate-100 pt-6 md:pt-0 md:pl-6">
+                    <p class="text-brand-purple font-bold text-xs uppercase">THE REVOLUTIONARY APPROACH</p>
+                    <h4 class="text-lg font-bold text-slate-800 text-brand-blue">林巧容 / 大鯨魚智慧運籌</h4>
+                    <p class="text-xs text-slate-500 leading-relaxed">
+                        ✓ AI 主動毫秒級地緣防禦推演，在暴風雨前轉彎<br>
+                        ✓ 動態演算法精準控管成本，鎖定合約保證艙位<br>
+                        ✓ 進口合規 API 自動化檢測，文件申辦免排隊、4小時放行
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="workflow" class="reveal py-24 px-4 max-w-7xl mx-auto space-y-16">
+        <div class="text-center max-w-xl mx-auto space-y-4">
+            <span class="text-xs font-bold uppercase tracking-wider text-brand-blue">CONSULTATIVE WORKFLOW</span>
+            <h2 class="text-4xl font-extrabold text-slate-900 tracking-tight">專業智慧顧問諮詢與對接流程</h2>
+            <p class="text-slate-500 text-sm">我們重視每一次委託，確保從需求了解、風險模擬到執行優化均能實時可視、安全無憂。</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-6 relative">
+            <!-- Flow 1 -->
+            <div class="glass-panel p-6 rounded-2xl border border-slate-100 space-y-4 text-center hover-glow">
+                <div class="w-10 h-10 rounded-full bg-slate-900 text-white font-extrabold flex items-center justify-center mx-auto text-sm shadow-md">1</div>
+                <h4 class="font-bold text-slate-900 text-sm">線上預約諮詢</h4>
+                <p class="text-[11px] text-slate-400 leading-relaxed">點擊日曆預約 30 分鐘線上評估，獲取基本背景資料。</p>
+            </div>
+
+            <!-- Flow 2 -->
+            <div class="glass-panel p-6 rounded-2xl border border-slate-100 space-y-4 text-center hover-glow">
+                <div class="w-10 h-10 rounded-full bg-brand-blue text-white font-extrabold flex items-center justify-center mx-auto text-sm shadow-md">2</div>
+                <h4 class="font-bold text-slate-900 text-sm">需求深入了解</h4>
+                <p class="text-[11px] text-slate-400 leading-relaxed">針對特定高精密資產或動態避險物流，進行多方合規分析。</p>
+            </div>
+
+            <!-- Flow 3 -->
+            <div class="glass-panel p-6 rounded-2xl border border-slate-100 space-y-4 text-center hover-glow">
+                <div class="w-10 h-10 rounded-full bg-brand-purple text-white font-extrabold flex items-center justify-center mx-auto text-sm shadow-md">3</div>
+                <h4 class="font-bold text-slate-900 text-sm">AI 航線風險評估</h4>
+                <p class="text-[11px] text-slate-400 leading-relaxed">套用大鯨魚專屬模型模擬，得出避嫌推薦航線報告。</p>
+            </div>
+
+            <!-- Flow 4 -->
+            <div class="glass-panel p-6 rounded-2xl border border-slate-100 space-y-4 text-center hover-glow">
+                <div class="w-10 h-10 rounded-full bg-brand-mint text-white font-extrabold flex items-center justify-center mx-auto text-sm shadow-md">4</div>
+                <h4 class="font-bold text-slate-900 text-sm">運輸策略設計</h4>
+                <p class="text-[11px] text-slate-400 leading-relaxed">輸出極其精準之海空複合艙位規劃、保險及裝載防震方案。</p>
+            </div>
+
+            <!-- Flow 5 -->
+            <div class="glass-panel p-6 rounded-2xl border border-slate-100 space-y-4 text-center hover-glow">
+                <div class="w-10 h-10 rounded-full bg-orange-500 text-white font-extrabold flex items-center justify-center mx-auto text-sm shadow-md">5</div>
+                <h4 class="font-bold text-slate-900 text-sm">專案無暇執行</h4>
+                <p class="text-[11px] text-slate-400 leading-relaxed">高階監控中心全時跟進，海關對口專線極速對接通關。</p>
+            </div>
+
+            <!-- Flow 6 -->
+            <div class="glass-panel p-6 rounded-2xl border border-slate-100 space-y-4 text-center hover-glow">
+                <div class="w-10 h-10 rounded-full bg-indigo-600 text-white font-extrabold flex items-center justify-center mx-auto text-sm shadow-md">6</div>
+                <h4 class="font-bold text-slate-900 text-sm">數據歸檔與優化</h4>
+                <p class="text-[11px] text-slate-400 leading-relaxed">運輸紀錄轉化為企業專屬 AI 特徵，進一步優化後續出海費率。</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="reveal py-24 bg-slate-50 border-y border-slate-100 px-4">
+        <div class="max-w-4xl mx-auto space-y-12">
+            <div class="text-center space-y-4">
+                <span class="text-xs font-bold uppercase tracking-wider text-brand-purple">FREQUENTLY ASKED QUESTIONS</span>
+                <h2 class="text-4xl font-extrabold text-slate-900 tracking-tight">常見問答 FAQ</h2>
+            </div>
+
+            <div class="space-y-4">
+                <!-- FAQ 1 -->
+                <div class="glass-panel rounded-2xl border border-slate-200/50 overflow-hidden">
+                    <button class="w-full text-left px-8 py-5 font-bold text-slate-800 flex justify-between items-center focus:outline-none" onclick="toggleFaq(this)">
+                        <span>我的半導體高價值設備極其敏感，AI 如何幫助確保物理安全性？</span>
+                        <svg class="w-5 h-5 transition-transform duration-300 transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="max-h-0 overflow-hidden transition-all duration-300 bg-white/40">
+                        <p class="px-8 py-5 text-xs text-slate-600 leading-relaxed">
+                            我們不只採用軟體演算，更在實體包裝部署裝配精密氣墊防震系統的 IoT 傳感器。AI 將在運輸途中動態預測後續路段的颠簸指數、路面狀況與起降角度，通知一線調度調整行車阻尼或起降方案。
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div class="glass-panel rounded-2xl border border-slate-200/50 overflow-hidden">
+                    <button class="w-full text-left px-8 py-5 font-bold text-slate-800 flex justify-between items-center focus:outline-none" onclick="toggleFaq(this)">
+                        <span>在美伊、紅海局勢等極端狀況下，如何保證貨品不被大幅滯留？</span>
+                        <svg class="w-5 h-5 transition-transform duration-300 transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="max-h-0 overflow-hidden transition-all duration-300 bg-white/40">
+                        <p class="px-8 py-5 text-xs text-slate-600 leading-relaxed">
+                            大鯨魚建立的多路徑模型，會在危機爆發初期立即鎖定多模聯運，例如提前在非衝突區港口卸貨轉空運或經由安全口岸迅速清關。不冒險走未經驗證的紅海，而是採取精密的多維動態套利路線避險。
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div class="glass-panel rounded-2xl border border-slate-200/50 overflow-hidden">
+                    <button class="w-full text-left px-8 py-5 font-bold text-slate-800 flex justify-between items-center focus:outline-none" onclick="toggleFaq(this)">
+                        <span>我們公司规模較小，也適合尋求林巧容進行 AI 物流轉型顧問諮詢嗎？</span>
+                        <svg class="w-5 h-5 transition-transform duration-300 transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="max-h-0 overflow-hidden transition-all duration-300 bg-white/40">
+                        <p class="px-8 py-5 text-xs text-slate-600 leading-relaxed">
+                            不論貨量大小，在當前的動盪時代，小企業更容易因一次塞港或扣關而面臨週轉危機。我們有專門針對中小零售及製造商的輕量級「智慧合規檢測」與「拼箱智慧拼裝」方案，歡迎立即點擊上方預約線上諮詢。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="reveal py-24 px-4 max-w-7xl mx-auto">
+        <div class="gradient-border glass-panel p-8 md:p-16 rounded-3xl grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative overflow-hidden shadow-2xl">
+            <!-- Ambient glow behind CTA -->
+            <div class="absolute -right-24 -top-24 w-96 h-96 bg-blue-150 rounded-full blur-3xl opacity-60"></div>
+            
+            <div class="lg:col-span-6 space-y-6 z-10">
+                <span class="text-xs font-bold uppercase tracking-wider text-brand-blue">CONNECT SECURELY</span>
+                <h2 class="text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
+                    與世界級 AI 貿易顧問<br>建立智慧連接
+                </h2>
+                <p class="text-sm text-slate-600 leading-relaxed">
+                    不論您是需要立即應對目前紅海延誤的半導體製造商，或是正在佈局未來五年綠色物流的企業策略官，我們都準備好為您量身規劃極富彈性的供應鏈防務。
+                </p>
+
+                <div class="grid gap-4 sm:grid-cols-3 pt-10 mb-6">
+                    <div class="glass-panel p-6 rounded-3xl border border-slate-100 hover-glow">
+                        <div class="w-11 h-11 rounded-2xl bg-gradient-to-br from-brand-blue to-brand-mint text-white flex items-center justify-center mb-4 shadow-lg">
+                            <span class="text-2xl">🌊</span>
+                        </div>
+                        <h4 class="text-base font-semibold text-slate-900 mb-2">海運下的生存</h4>
+                        <p class="text-xs text-slate-500 leading-relaxed">了解最新國際海運消息，跟著我們一同乘風破浪完成一次次冒險。</p>
+                    </div>
+                    <div class="glass-panel p-6 rounded-3xl border border-slate-100 hover-glow">
+                        <div class="w-11 h-11 rounded-2xl bg-gradient-to-br from-brand-purple to-brand-blue text-white flex items-center justify-center mb-4 shadow-lg">
+                            <span class="text-2xl">⚖️</span>
+                        </div>
+                        <h4 class="text-base font-semibold text-slate-900 mb-2">國際貿易規範</h4>
+                        <p class="text-xs text-slate-500 leading-relaxed">從經驗、法條到正確說明，讓每一位夥伴能合法合規地完成每一筆國際貿易。</p>
+                    </div>
+                    <div class="glass-panel p-6 rounded-3xl border border-slate-100 hover-glow">
+                        <div class="w-11 h-11 rounded-2xl bg-gradient-to-br from-brand-mint to-brand-purple text-white flex items-center justify-center mb-4 shadow-lg">
+                            <span class="text-2xl">🌍</span>
+                        </div>
+                        <h4 class="text-base font-semibold text-slate-900 mb-2">各國關稅稅則</h4>
+                        <p class="text-xs text-slate-500 leading-relaxed">使用本站提供的 AI 客服，可快速了解各國的進出口稅則。</p>
+                    </div>
+                </div>
+
+                <!-- Immediate action contacts -->
+                <div class="space-y-3 text-xs text-slate-500 pt-4">
+                    <p class="flex items-center gap-2">
+                        <strong class="text-slate-700">對接人:</strong> 林巧容 (Ciaoro Lin)
+                    </p>
+                    <p class="flex items-center gap-2">
+                        <strong class="text-slate-700">所屬機構:</strong> 大鯨魚國際貿易有限公司
+                    </p>
+                    <p class="flex items-center gap-2">
+                        <strong class="text-slate-700">顧問信箱:</strong> contact@whaleglobal.ai (模擬通道)
+                    </p>
+                </div>
+
+                <div class="mt-8">
+                    <span class="text-xs font-bold uppercase tracking-wider text-slate-400">External Dependencies</span>
+                    <div class="mt-4 grid gap-3 sm:grid-cols-2">
+                        <a href="https://www.facebook.com/lin.judy" target="_blank" class="flex items-center gap-3 p-4 rounded-3xl border border-slate-200 bg-white hover:bg-slate-50 transition">
+                            <span class="w-10 h-10 rounded-2xl bg-blue-600 text-white flex items-center justify-center text-lg font-bold">f</span>
+                            <div class="text-left">
+                                <p class="text-sm font-semibold text-slate-900">Facebook</p>
+                                <p class="text-[11px] text-slate-400">lin.judy</p>
+                            </div>
+                        </a>
+                        <a href="https://www.linkedin.com/in/ciaoro" target="_blank" class="flex items-center gap-3 p-4 rounded-3xl border border-slate-200 bg-white hover:bg-slate-50 transition">
+                            <span class="w-10 h-10 rounded-2xl bg-sky-700 text-white flex items-center justify-center text-lg font-bold">in</span>
+                            <div class="text-left">
+                                <p class="text-sm font-semibold text-slate-900">LinkedIn</p>
+                                <p class="text-[11px] text-slate-400">ciaoro</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lg:col-span-6 z-10 bg-white p-8 rounded-2xl border border-slate-100 shadow-md text-center space-y-6">
+                <div class="bg-slate-50 rounded-3xl border border-slate-200 p-6 text-left">
+                    <div class="inline-flex items-center gap-2 text-xs uppercase tracking-wider text-slate-400 font-bold mb-3">
+                        <span>📝</span>
+                        <span>需求表單</span>
+                    </div>
+                    <h4 class="text-lg font-bold text-slate-900 mb-2">填寫需求表單</h4>
+                    <p class="text-xs text-slate-500 leading-relaxed mb-4">請簡單描述您的專案需求，我們會儘速回覆並為您準備最適合的諮詢方案。</p>
+                    <a href="https://forms.gle/LhrV4zNK8DGi4bKc6" target="_blank" class="inline-flex items-center justify-center w-full bg-brand-blue hover:bg-brand-dark text-white py-3 rounded-xl font-semibold tracking-wide transition-all duration-300 text-sm">
+                        前往填寫表單
+                    </a>
+                </div>
+                
+                <span class="relative flex h-3 w-3 mx-auto">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-mint opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-3 w-3 bg-brand-mint"></span>
+                </span>
+                
+                <h3 class="text-xl font-bold text-slate-800">預約 30 分鐘線上策略通話</h3>
+                <p class="text-xs text-slate-500 leading-relaxed max-w-sm mx-auto">
+                    我們將透過 Google Meet 深入了解您的全球供應鏈現況，並在通話結束後為您提供一份初步避險情境推估框架。
+                </p>
+
+                <a href="https://calendar.app.google/BSV5fuN31qyr7vTw9" target="_blank" class="block w-full bg-slate-900 hover:bg-brand-blue text-white py-4 rounded-xl font-semibold tracking-wide shadow-lg hover:shadow-2xl transition-all duration-300 text-sm">
+                    前往 Google日曆 即刻預約
+                </a>
+
+                <p class="text-[10px] text-slate-400">目前預約狀態：下週尚有 3 個空檔名額</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-slate-50 border-t border-slate-100 py-16 px-4">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8 text-xs text-slate-500">
+            <div class="flex items-center gap-3">
+                <span class="w-8 h-8 rounded-lg bg-gradient-to-tr from-brand-blue to-brand-purple flex items-center justify-center text-white font-extrabold text-sm tracking-tighter">W</span>
+                <div>
+                    <span class="font-bold text-slate-800 tracking-tight">WHALE GLOBAL AI</span>
+                    <p class="text-[9px] text-slate-400">林巧容 · 大鯨魚國際貿易</p>
+                </div>
+            </div>
+
+            <div class="flex gap-8">
+                <a href="#about" class="hover:text-slate-800 transition-colors">關於</a>
+                <a href="#expertise" class="hover:text-slate-800 transition-colors">解決方案</a>
+                <a href="#case" class="hover:text-slate-800 transition-colors">案例研究</a>
+                <a href="#faq" class="hover:text-slate-800 transition-colors">問答</a>
+            </div>
+
+            <p class="text-slate-400">
+                &copy; 2026 WHALE GLOBAL AI. All rights reserved. 依據法律保障智慧產權與資安政策。
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Drawer Controller
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuLinks = document.querySelectorAll('.menu-link');
+
+        menuBtn.addEventListener('click', () => {
+            const spans = menuBtn.querySelectorAll('span');
+            spans[0].classList.toggle('rotate-45');
+            spans[0].classList.toggle('translate-y-1.5');
+            spans[1].classList.toggle('opacity-0');
+            spans[2].classList.toggle('-rotate-45');
+            spans[2].classList.toggle('-translate-y-1.5');
+            mobileMenu.classList.toggle('hidden');
+            mobileMenu.classList.toggle('flex');
+        });
+
+        menuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menuBtn.click();
+            });
+        });
+
+        // FAQ accordion action
+        function toggleFaq(button) {
+            const parent = button.parentElement;
+            const content = parent.querySelector('div');
+            const icon = button.querySelector('svg');
+
+            if (content.style.maxHeight && content.style.maxHeight !== '0px') {
+                content.style.maxHeight = '0px';
+                icon.classList.remove('rotate-180');
+            } else {
+                content.style.maxHeight = content.scrollHeight + 'px';
+                icon.classList.add('rotate-180');
+            }
+        }
+
+        // Elegant Typewriter Logic
+        const words = ["Smarter.", "Safer.", "Stronger."];
+        let wordIdx = 0;
+        let charIdx = 0;
+        let isDeleting = false;
+        const typewriterEl = document.getElementById('typewriter');
+
+        function type() {
+            const currentWord = words[wordIdx];
+            if (isDeleting) {
+                typewriterEl.textContent = currentWord.substring(0, charIdx - 1);
+                charIdx--;
+            } else {
+                typewriterEl.textContent = currentWord.substring(0, charIdx + 1);
+                charIdx++;
+            }
+
+            let typeSpeed = isDeleting ? 40 : 100;
+
+            if (!isDeleting && charIdx === currentWord.length) {
+                typeSpeed = 1800; // pause at peak
+                isDeleting = true;
+            } else if (isDeleting && charIdx === 0) {
+                isDeleting = false;
+                wordIdx = (wordIdx + 1) % words.length;
+                typeSpeed = 300; // brief pause before next word
+            }
+
+            setTimeout(type, typeSpeed);
+        }
+
+        // Scroll Reveal Controller
+        const reveals = document.querySelectorAll('.reveal');
+        function revealOnScroll() {
+            reveals.forEach(el => {
+                const rect = el.getBoundingClientRect();
+                if (rect.top < window.innerHeight - 80) {
+                    el.classList.add('active');
+                }
+            });
+        }
+        window.addEventListener('scroll', revealOnScroll);
+
+        // Vector Logistics World Route Canvas
+        const canvas = document.getElementById('routeCanvas');
+        const ctx = canvas.getContext('2d');
+
+        // Resize Canvas dynamically
+        function resizeCanvas() {
+            canvas.width = canvas.parentElement.clientWidth;
+            canvas.height = canvas.parentElement.clientHeight;
+        }
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+
+        // Map hub coordinates (Scaled dynamic coordinates representing nodes)
+        // Taipei, Rotterdam, LA, Dubai, Singapore
+        const hubs = [
+            { x: 0.75, y: 0.55, name: 'Taipei (TSMC)', size: 8, color: '#2563eb' },
+            { x: 0.45, y: 0.32, name: 'Rotterdam', size: 5, color: '#7c3aed' },
+            { x: 0.18, y: 0.42, name: 'Los Angeles', size: 6, color: '#10b981' },
+            { x: 0.58, y: 0.48, name: 'Dubai Hub', size: 6, color: '#ef4444' },
+            { x: 0.70, y: 0.65, name: 'Singapore', size: 5, color: '#f59e0b' }
+        ];
+
+        // Active animated shipping lanes
+        const shippingLanes = [
+            { from: 0, to: 2, progress: 0, speed: 0.003, pulseRadius: 0 }, // Taipei -> LA
+            { from: 0, to: 3, progress: 0.3, speed: 0.002, pulseRadius: 0 }, // Taipei -> Dubai
+            { from: 3, to: 1, progress: 0.6, speed: 0.0025, pulseRadius: 0 } // Dubai -> Rotterdam
+        ];
+
+        // Animated particles (simulate dynamic global trade current flows)
+        const particles = [];
+        for (let i = 0; i < 25; i++) {
+            particles.push({
+                x: Math.random(),
+                y: Math.random(),
+                vx: (Math.random() - 0.5) * 0.001,
+                vy: (Math.random() - 0.5) * 0.001,
+                size: Math.random() * 2 + 1,
+                alpha: Math.random() * 0.5 + 0.1
+            });
+        }
+
+        function drawArc(ctx, x1, y1, x2, y2, bend) {
+            ctx.beginPath();
+            ctx.moveTo(x1, y1);
+            // Draw smooth curve using quadratic curve with control offset
+            const cx = (x1 + x2) / 2 - (y1 - y2) * bend;
+            const cy = (y1 + y2) / 2 - (x2 - x1) * bend;
+            ctx.quadraticCurveTo(cx, cy, x2, y2);
+            ctx.stroke();
+            return { cx, cy };
+        }
+
+        function getArcPoint(x1, y1, x2, y2, bend, t) {
+            const cx = (x1 + x2) / 2 - (y1 - y2) * bend;
+            const cy = (y1 + y2) / 2 - (x2 - x1) * bend;
+            const xt = (1 - t) * (1 - t) * x1 + 2 * (1 - t) * t * cx + t * t * x2;
+            const yt = (1 - t) * (1 - t) * y1 + 2 * (1 - t) * t * cy + t * t * y2;
+            return { x: xt, y: yt };
+        }
+
+        function animateCanvas() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            // 1. Draw grid backdrop lines inside the card
+            ctx.strokeStyle = 'rgba(15, 23, 42, 0.03)';
+            ctx.lineWidth = 1;
+            for (let i = 0; i < canvas.width; i += 30) {
+                ctx.beginPath();
+                ctx.moveTo(i, 0);
+                ctx.lineTo(i, canvas.height);
+                ctx.stroke();
+            }
+            for (let j = 0; j < canvas.height; j += 30) {
+                ctx.beginPath();
+                ctx.moveTo(0, j);
+                ctx.lineTo(canvas.width, j);
+                ctx.stroke();
+            }
+
+            // 2. Draw static data current particles
+            particles.forEach(p => {
+                p.x += p.vx;
+                p.y += p.vy;
+                if (p.x < 0 || p.x > 1) p.vx *= -1;
+                if (p.y < 0 || p.y > 1) p.vy *= -1;
+
+                ctx.fillStyle = `rgba(37, 99, 235, ${p.alpha})`;
+                ctx.beginPath();
+                ctx.arc(p.x * canvas.width, p.y * canvas.height, p.size, 0, Math.PI * 2);
+                ctx.fill();
+            });
+
+            // 3. Draw shipping arcs/lanes
+            shippingLanes.forEach(lane => {
+                const hubA = hubs[lane.from];
+                const hubB = hubs[lane.to];
+                const ax = hubA.x * canvas.width;
+                const ay = hubA.y * canvas.height;
+                const bx = hubB.x * canvas.width;
+                const by = hubB.y * canvas.height;
+
+                // Draw solid lane path with slight glow
+                ctx.strokeStyle = 'rgba(124, 58, 237, 0.2)';
+                ctx.lineWidth = 1.5;
+                drawArc(ctx, ax, ay, bx, by, 0.15);
+
+                // Update shipping flow progress
+                lane.progress += lane.speed;
+                if (lane.progress > 1) lane.progress = 0;
+
+                // Draw moving container packet
+                const pt = getArcPoint(ax, ay, bx, by, 0.15, lane.progress);
+                ctx.fillStyle = '#2563eb';
+                ctx.beginPath();
+                ctx.arc(pt.x, pt.y, 4, 0, Math.PI * 2);
+                ctx.fill();
+
+                // Small ripple wave around shipping unit
+                ctx.strokeStyle = `rgba(37, 99, 235, ${1 - lane.progress})`;
+                ctx.lineWidth = 1;
+                ctx.beginPath();
+                ctx.arc(pt.x, pt.y, 8, 0, Math.PI * 2);
+                ctx.stroke();
+            });
+
+            // 4. Draw dynamic hubs/ports
+            hubs.forEach(hub => {
+                const hx = hub.x * canvas.width;
+                const hy = hub.y * canvas.height;
+
+                // Pulsing hub base
+                ctx.fillStyle = hub.color;
+                ctx.beginPath();
+                ctx.arc(hx, hy, hub.size / 2, 0, Math.PI * 2);
+                ctx.fill();
+
+                // Pulsing outer ring
+                if (!hub.pulse) hub.pulse = 0;
+                hub.pulse += 0.02;
+                if (hub.pulse > 1) hub.pulse = 0;
+
+                ctx.strokeStyle = hub.color;
+                ctx.lineWidth = 1.5;
+                ctx.beginPath();
+                ctx.arc(hx, hy, (hub.size / 2) + (hub.pulse * 15), 0, Math.PI * 2);
+                ctx.strokeStyle = `rgba(${hub.color === '#2563eb' ? '37,99,235' : '124,58,237'}, ${1 - hub.pulse})`;
+                ctx.stroke();
+
+                // Node tag text
+                ctx.fillStyle = '#475569';
+                ctx.font = 'bold 9px Inter';
+                ctx.fillText(hub.name, hx + 10, hy + 3);
+            });
+
+            requestAnimationFrame(animateCanvas);
+        }
+
+        // On window load trigger typewriter and reveal scroll elements
+        window.onload = function() {
+            setTimeout(type, 500);
+            revealOnScroll();
+            animateCanvas();
+        }
+    </script>
+</body>
+</html>
